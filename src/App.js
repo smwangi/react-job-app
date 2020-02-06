@@ -8,7 +8,7 @@ import Home from './components/Home';
 import About from './components/About';
 
 function App() {
-  //Declare a new state variable "count"
+  //Declare a new state variable "count" 
   const [count] = useState(0);
 
   useEffect(() => {
