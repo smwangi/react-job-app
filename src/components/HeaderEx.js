@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import Typography, { isWidthUp } from '@material-ui/core';
+//import Typography, { isWidthUp } from '@material-ui/core';
+import Typography from '@material-ui/core/Typography';
+import {isWidthUp} from '@material-ui/core/';
 import Icon from '@material-ui/core/Icon';
 import IconButton from '@material-ui/core/IconButton';
 import InputBase from '@material-ui/core/InputBase';

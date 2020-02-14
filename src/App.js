@@ -1,28 +1,45 @@
-import React,{useState, useEffect} from 'react';
-import {Route,Switch} from 'react-router-dom';
+import React from 'react';
+import clsx from 'clsx';
 
-//import logo from './logo.svg';
-import './App.css';
+import { makeStyles } from '@material-ui/core';
 
-import Home from './components/Home';
-import About from './components/About';
+import NavBar from './components/NavBar';
+
+const drawerWidth = 240
+
+const useStyles = makeStyles(theme => ({
+  root: {
+    display:'flex'
+  },
+  drawerPaper:{
+    position:'relative',
+    whiteSpace:'nowrap',
+    width:drawerWidth,
+    paddingTop: theme.spacing(4),
+    paddingBottom: theme.spacing(4),
+    background: '#535454',
+    color: '#fff'
+  },
+  content:{
+    flexGrow: 1,
+    height: '100vh',
+    overflow: 'auto'
+  },
+  container:{
+    paddingTop: theme.spacing(4),
+    paddingBottom: theme.spacing(4)
+  }
+}));
 
 function App() {
-  //Declare a new state variable "count" 
-  const [count] = useState(0);
-
-  useEffect(() => {
-    document.title = `You clicked ${count} times`;
-  });
+  const classes = useStyles()
 
   return (
-   <main>
-     <Switch>
-        <Route path="/" component={Home} exact/>
-        <Route path="/about" component={About}/>
-     </Switch>
-   </main>
+       <div className={clsx('App',classes.root)}>
+        <NavBar/>
+      </div> 
   );
 }
+
 
 export default App;
