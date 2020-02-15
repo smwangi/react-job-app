@@ -6,28 +6,25 @@ import DashboardIcon from '@material-ui/icons/Dashboard';
 import AssignmentIcon from '@material-ui/icons/Assignment';
 import PeopleIcon from '@material-ui/icons/People';
 import { ListItemText } from '@material-ui/core';
-import { NavLink } from 'react-router-dom';
+import { NavLink,Link } from 'react-router-dom';
 
+// component={Link} to={{pathname:'/',state:'flushDeal'}} activeClassName="Mui-selected" exact
+const NavLinkMui = React.forwardRef((props, ref) => (
+    <NavLink {...props} activeClassName="Mui-selected" ref={ref} />
+  ));
 
+  
 export const mainListItems = (
 
     <div>
-        <ListItem
-         button
-         key="Dashboard"
-         component={NavLink} to="/" activeClassName="Mui-selected" exact
-         >
+        <ListItem button component={NavLinkMui} to="/" >
             <ListItemIcon>
                 <DashboardIcon />
             </ListItemIcon>
             <ListItemText primary="Dashboard" />
         </ListItem>
 
-        <ListItem
-         button
-         key="Users"
-         component={NavLink} to="/users" exact
-         >
+        <ListItem component={Link} to="/users">
             <ListItemIcon>
                 <PeopleIcon />
             </ListItemIcon>

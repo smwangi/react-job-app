@@ -13,11 +13,7 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-// import ListItem from '@material-ui/core/ListItem';
-// import ListItemIcon from '@material-ui/core/ListItemIcon';
-// import ListItemText from '@material-ui/core/ListItemText';
-// import InboxIcon from '@material-ui/icons/MoveToInbox';
-// import MailIcon from '@material-ui/icons/Mail';
+
 import AppRouter from './RouterComponent';
 import { mainListItems, secondaryListItems } from '../util/menuLists';
 
@@ -166,7 +162,7 @@ export default function NavBar() {
       <main className={classes.content}>
         <div className={classes.toolbar} />
         <Container maxWidth="lg" className={classes.container}>
-             <AppRouter/>
+        <AppRouter/>
           </Container> 
       </main>
      

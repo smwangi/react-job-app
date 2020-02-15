@@ -1,6 +1,7 @@
 import React from 'react';
 //import { makeStyles } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
+import {Link} from 'react-router-dom';
 
 // const useStyles = makeStyles(theme => ({
 //     content: {
@@ -52,6 +53,8 @@ function Home() {
           nibh sit. Ornare aenean euismod elementum nisi quis eleifend. Commodo viverra maecenas
           accumsan lacus vel facilisis. Nulla posuere sollicitudin aliquam ultrices sagittis orci a.
         </Typography>
+        <Link to="/">Home </Link>
+      <Link to="/about">About Us </Link>
         </div>
     );
 }
