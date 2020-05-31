@@ -3,9 +3,47 @@ import clsx from 'clsx';
 
 import { makeStyles } from '@material-ui/core';
 
-import NavBar from './components/NavBar';
+import Login from './components/Login/Login';
+import Home from './components/Home';
 
-const drawerWidth = 240
+
+export const AuthContext = React.createContext(null);
+
+const drawerWidth = 240;
+
+const initialState ={
+  isAuthenticated: false,
+  user: null,
+  token: null
+};
+
+//Takes in 2 parameters and returns new state based on action
+const reducer = (state,action) => {
+
+  switch(action.type){
+    case "LOGIN":
+      localStorage.setItem("user",JSON.stringify(action.payload.username));
+      localStorage.setItem("token",JSON.stringify(action.payload.accessToken));
+      return{
+        ...state,
+        isAuthenticated:true,
+        user: action.payload.username,
+        token: action.payload.accessToken
+      };
+      
+    case "LOGOUT":
+      localStorage.clear();
+      return{
+        ...state,
+        isAuthenticated:false,
+        user:null
+      }
+      
+    default:
+      return state;
+  };
+
+};
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -32,12 +70,17 @@ const useStyles = makeStyles(theme => ({
 }));
 
 function App() {
-  const classes = useStyles()
+  const classes = useStyles();
+  const [state,dispatch] = React.useReducer(reducer,initialState);
 
   return (
+    <AuthContext.Provider value={{state,dispatch}}>
+     
        <div className={clsx('App',classes.root)}>
-        <NavBar/>
+        
+        {!state.isAuthenticated ? <Login/> : <Home/>}
       </div> 
+      </AuthContext.Provider>
   );
 }
 

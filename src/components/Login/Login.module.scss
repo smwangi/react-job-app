@@ -1,0 +1,129 @@
+
+body {
+    font: 13px/20px 'Lucinda Grande',Tahoma, Verdana, sans-serif;
+    color: #404040;
+    background: #0ca3d2;
+}
+
+.container {
+    margin: 80px auto;
+    width: 640px;
+}
+
+.Login {
+    position: relative;
+    margin: 0 auto;
+    padding: 20px 20px 20px;
+    width: 310px;
+    color: red($color: #000000);
+    background: white;
+    border-radius: 3px;
+    //@include box-shadow(0 0 200px rgba(white, .5), 0 1px 2px rgba(black, .3));
+    &:before {
+        content: '';
+        position: absolute;
+        top: -8px; bottom: -8px; left: -8px;
+        z-index: -1;
+        background: rgba(black,.08);
+        border-radius: 4px;
+    }
+
+    h1 {
+        font: 1em sans-serif;
+        font-weight: bold;
+        font-size: 15px;
+        line-height: 40px;
+        color: #555;
+        text-align: center;
+        text-shadow: 0 1px white;
+        background: #f3f3f3;
+        border-bottom: 1px solid #cfcfcf;
+    }
+
+    p {margin: 20px 0 0; }
+    p:first-child { margin: 0;}
+
+    input[type=email], input[type=password] { width: 278px;}
+
+    p.remember_me {
+        float: left;
+        line-height: 31px;
+
+        label {
+            font-size: 12px;
+            color: #777;
+            cursor: pointer;
+        }
+        input {
+            position: relative;
+            bottom: 1px;
+            margin-left: 4px;
+            vertical-align: middle;
+        }
+    }
+    p.submit {text-align: right;}
+    p.forgotPassword { margin-top: 20px;}
+
+    .loginHelp {
+        margin: 20px 0;
+        font-size: 11px;
+        color: black;
+        text-align: center;
+        text-shadow: 0 1px #2a85a1;
+
+        a {
+            color: #cce7fa;
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    input {
+        font-family: 'Lucinda Grande', Tahoma, Verdana, sans-serif;
+        font-size: 14px;
+    }
+
+    input[type=email], input[type=password] {
+        margin: 5px;
+        padding: 0 10px;
+        width: 280px;
+        height: 34px;
+        color: #404040;
+        background: white;
+        border: 1px solid;
+        border-color: #c4c4c4 #d1d1d1 #d4d4d4;
+        border-radius: 2px;
+        outline: 5px solid #eff4f7;
+        &:focus {
+            border-color: #7dc9e2;
+            outline-color: #dceefc;
+            outline-offset: 0;
+        }
+    }
+
+    input[type=submit] {
+        padding: 0 18px;
+        height: 29px;
+        font-size: 12px;
+        font-weight: bold;
+        color: #527881;
+        text-shadow: 0 1px #e3f1f1;
+        background: #cde5ef;
+        border: 1px solid;
+        border-color: #b4ccce #b3c0c8 #9eb9c2;
+        border-radius: 16px;
+        outline: 0;
+        cursor: pointer;
+        &:active{
+            background: #cde5ef;
+            border-color: #9ed9c2 #b3c0c8 #b4ccce;
+        }
+    }
+
+    .errorMessage {
+        //background-color: red($color: #8d0808);
+        color: rgb(224, 16, 16);
+    }
+}
