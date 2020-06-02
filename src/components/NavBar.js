@@ -1,6 +1,9 @@
 import React from 'react';
 import clsx from 'clsx';
-import { makeStyles, useTheme, CssBaseline, AppBar, Toolbar, IconButton, Typography, Drawer, Divider, List } from '@material-ui/core';
+import { BrowserRouter as Router, Route, Switch  } from "react-router-dom";
+//import Home from './Home';
+import About from './About';
+import { makeStyles, useTheme, CssBaseline, AppBar, Toolbar, IconButton, Typography, Drawer, Divider, List, Grid } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
@@ -110,6 +113,9 @@ export const NavBar = () => {
                     </Typography>
                 </Toolbar>
             </AppBar>
+            <Grid container spacing={3}>
+                        <Typography>ME</Typography>
+            </Grid>
             <Drawer
                 variant="permanent"
                 className={clsx(classes.drawer, {
@@ -147,6 +153,10 @@ export const NavBar = () => {
                     ))}
                 </List>
                 <Divider />
+                <Switch>
+                  {/* <Route exact path="/" component={Home} /> */}
+                  <Route exact path="/about" component={About}>About</Route>
+                </Switch>
             </Drawer>
         </div>
     )

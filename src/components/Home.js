@@ -1,6 +1,7 @@
 import React from 'react';
-
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NavBar from './NavBar';
+import { Typography } from '@material-ui/core';
 
 // const useStyles = makeStyles(theme => ({
 //     content: {
@@ -17,22 +18,15 @@ import NavBar from './NavBar';
 function Home() {
    // const classes = useStyles();
     return (
-
+        // <React.Fragment>
+        //     <Router>
+        //     <NavBar/>
+        //     </Router>
+        // </React.Fragment>
         <div>
-           {/* <NavBar/>
-            <main className={classes.content}>
-                <div className={classes.appBarSpacer}>
-                    <Container maxWidth="lg" className={classes.containter}>
-                        <Grid container spacing={3}>
-                            <Button>S</Button>
-                        </Grid>
-                    </Container>
-                </div>
-            </main> */}
-           <NavBar/>
-        {/* <Link to="/">Home </Link>
-      <Link to="/about">About Us </Link> */}
+            <Typography>Home</Typography>
         </div>
+       
     );
 }
 

@@ -5,6 +5,7 @@ import { makeStyles } from '@material-ui/core';
 
 import Login from './components/Login/Login';
 import Home from './components/Home';
+import NavBar from './components/NavBarXX';
 
 
 export const AuthContext = React.createContext(null);
@@ -78,7 +79,7 @@ function App() {
      
        <div className={clsx('App',classes.root)}>
         
-        {!state.isAuthenticated ? <Login/> : <Home/>}
+        {!state.isAuthenticated ? <Login/> : <NavBar/>}
       </div> 
       </AuthContext.Provider>
   );

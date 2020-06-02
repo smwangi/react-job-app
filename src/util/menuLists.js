@@ -8,7 +8,7 @@ import PeopleIcon from '@material-ui/icons/People';
 import { ListItemText } from '@material-ui/core';
 import { NavLink,Link } from 'react-router-dom';
 
-// component={Link} to={{pathname:'/',state:'flushDeal'}} activeClassName="Mui-selected" exact
+
 const NavLinkMui = React.forwardRef((props, ref) => (
     <NavLink {...props} activeClassName="Mui-selected" ref={ref} />
   ));
