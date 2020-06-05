@@ -22,6 +22,7 @@ const drawerWidth = 240;
 const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
+    minWidth: '100%'
   },
   appBar: {
     zIndex: theme.zIndex.drawer + 1,
@@ -77,7 +78,11 @@ const useStyles = makeStyles(theme => ({
   content: {
     flexGrow: 1,
     padding: theme.spacing(3),
+    
   },
+  container: {
+
+  }
 }));
 
 export default function NavBar() {
@@ -115,7 +120,7 @@ export default function NavBar() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap>
-            Mini variant drawer
+            Jobs App
           </Typography>
         </Toolbar>
       </AppBar>
@@ -143,12 +148,14 @@ export default function NavBar() {
         <List>{secondaryListItems}</List>
 
       </Drawer>
+      <React.Fragment>
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        <Container maxWidth="lg" className={classes.container}>
-          <AppRouter />
-        </Container>
+      <Container maxWidth="lg" className={classes.container}>
+      <AppRouter />
+      </Container>
       </main>
+    </React.Fragment>
 
     </div>
   );
